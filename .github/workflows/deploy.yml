@@ -20,10 +20,8 @@ jobs:
 
       # ---------- Backend ----------
       - name: Install backend dependencies
-        run: |
-          cd server
-          npm ci
-          working-directory: server
+        run: npm ci
+        working-directory: server
 
       - name: Build backend (if needed)
         run: |
