@@ -23,23 +23,14 @@ jobs:
         run: |
           cd server
           npm ci
-          working-directory:server
+          working-directory: server
 
       - name: Build backend (if needed)
         run: |
           cd server
           npm run build || echo "No build step for backend"
 
-      # ---------- Frontend ----------
-      - name: Install frontend dependencies
-        run: |
-          cd client
-          npm ci
-
-      - name: Build frontend
-        run: |
-          cd client
-          npm run build
+     
 
       # Optional: deploy commands
       # Render: use Render CLI or GitHub integration
