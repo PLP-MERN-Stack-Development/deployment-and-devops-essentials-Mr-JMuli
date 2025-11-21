@@ -11,26 +11,21 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4   # ← updated to latest
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4   # ← updated to latest
         with:
           node-version: '20'
+          cache: 'npm'                # ← optional but speeds up runs
 
       # ---------- Backend ----------
-      - name: Install dependencies
+      - name: Install backend dependencies
         working-directory: server
         run: npm ci
-        
 
       - name: Build backend (if needed)
         working-directory: server
         run: npm run build || echo "No build step for backend"
-        
 
-     
-
-      # Optional: deploy commands
-      # Render: use Render CLI or GitHub integration
-      # Vercel: use Vercel CLI or GitHub integration
+      # Add your deploy steps here later (Render, Vercel, etc.)
