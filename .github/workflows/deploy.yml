@@ -23,7 +23,7 @@ jobs:
         run: |
           cd server
           npm ci
-          working-directory: server
+          working-directory:server
 
       - name: Build backend (if needed)
         run: |
