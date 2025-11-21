@@ -24,9 +24,8 @@ jobs:
         working-directory: server
 
       - name: Build backend (if needed)
-        run: |
-          cd server
-          npm run build || echo "No build step for backend"
+        run: npm run build || echo "No build step for backend"
+        working-directory: server
 
      
 
