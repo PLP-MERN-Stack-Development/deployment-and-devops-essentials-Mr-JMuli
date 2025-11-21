@@ -20,13 +20,14 @@ jobs:
 
       # ---------- Backend ----------
       - name: Install backend dependencies
-        run: |
-            cd server
-            npm ci
+        working-directory: server
+        run: npm ci
+        
 
       - name: Build backend (if needed)
-        run: npm run build || echo "No build step for backend"
         working-directory: server
+        run: npm run build || echo "No build step for backend"
+        
 
      
 
