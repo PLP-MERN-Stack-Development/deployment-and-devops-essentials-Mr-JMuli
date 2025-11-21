@@ -19,7 +19,7 @@ jobs:
           node-version: '20'
 
       # ---------- Backend ----------
-      - name: Install backend dependencies
+      - name: Install dependencies
         working-directory: server
         run: npm ci
         
